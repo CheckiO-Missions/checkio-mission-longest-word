@@ -1,0 +1,114 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        I have no idea how to start solving this mission.
+    </div>
+    <div class="answer">
+        <p>
+            Catch an idea 💡! Split the sentence into separate words, iterate over them and store the longest one on each step into predefined variable, return variable value at the end.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok, what should I start from?
+    </div>
+    <div class="answer">
+        <p>
+            Declare two variables: for longest word with initial value of empty string; for its length with initial value 0. You are going to return the longest word at the end.
+        </p>
+        <pre class="brush: python">
+res, l = "", 0
+...
+return res
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        What to do next?
+    </div>
+    <div class="answer">
+        <p>
+            Let's split the sentence into separate words with <a target="_blank" href="https://www.w3schools.com/python/ref_string_split.asp">str.split()</a> method without arguments and iterate over these words with <a target="_blank" href="https://www.w3schools.com/python/python_for_loops.asp">for</a> loop.
+        </p>
+        <pre class="brush: python">
+for word in sentence.split():
+    ...
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        What to do with every word?
+    </div>
+    <div class="answer">
+        <p>
+            Since you are looking for the longest one, you need to calculate the length with <a target="_blank" href="https://www.w3schools.com/python/ref_func_len.asp">len()</a> function.
+        </p>
+        <pre class="brush: python">
+l1 = len(word)
+        </pre>
+        <p>
+            Now, if this calculated value <b class="code">l1</b> is strictly bigger then the stored one <b class="code">l</b>, you need to update variables <b class="code">res</b> and <b class="code">l</b> with new values of <b class="code">word</b> and <b class="code">l1</b>. 
+        </p>
+        <pre class="brush: python">
+if l1 > l: res, l = word, l1
+        </pre>
+        <p>
+            Tuple unpacking is used here. Strict comparison is needed to keep the first word of longest length.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        So, how my final solution should look like?
+    </div>
+    <div class="answer">
+        <p>
+            You just need to join all previous hints and wrap your code into function expression. Using type hints for input and output data are highly recommended.
+        </p>
+        <p>Here is the whole solution:</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def longest_word(sentence: str) -> str:
+    
+    res, l = "", 0 
+    for word in sentence.split():
+        l1 = len(word)
+        if l1 > l: res, l = word, l1
+        
+    return res
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Show me more solutions!<br />
+        'Cause I wanna be a real 🥇 <span translate="no">Python</span> Ninnjaa!
+    </div>
+    <div class="answer">
+        <p>Sure, grab it!</p>
+        <p>
+            Split the line and take maximum by length and reversed index in line.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def longest_word(line: str) -> str:
+
+    return line and max(line.split(), key=lambda w: (len(w), -line.index(w)))
+        </pre>
+        </div>
+        <p>Click <b>Best Solutions</b> at mission menu and see a lot of other interesting solutions!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Thanks! I know and understand more now! Everything works fine!
+    </div>
+    <div class="answer">
+        Glad to hear it 👍!
+    </div>
+</div>
+</body>
