@@ -50,6 +50,10 @@ TESTS = {
             "input": [""],
             "answer": ""
         },
+        {
+            "input": [" "],
+            "answer": ""
+        },
     ],
     "Extra": [
         {
