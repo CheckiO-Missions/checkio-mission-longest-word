@@ -1,0 +1,46 @@
+<!-- Describe task in general -->
+
+<p>
+    Ця функція повинна приймати на вхід рядок без розділових знаків і повертати найдовше слово у рядку. Якщо у рядку є декілька слів однакової довжини, поверніть перше, яке з'явиться на екрані.  
+</p>
+
+<p style="text-align: center;">
+    <img  title="example" src="{{MEDIA}}longest-word.png" alt="example" style="max-height: 200px"/>
+</p>
+
+<!-- Explain input and output values -->
+<p>
+   <strong>Вхідні дані:</strong> Рядок <span>(str{% if is_js %}ing{% endif %})</span>.
+</p>
+
+<p>
+   <strong>Вихідні дані:</strong> Рядок <span>(str{% if is_js %}ing{% endif %})</span>. 
+</p>
+
+
+<p>
+    <strong>Приклади:</strong>
+</p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+
+<!-- Here you can explain how it can be used in development -->
+<!-- The section is optional -->
+<p class="for_info_only">
+    <strong>Як використовується:</strong>
+    <ul>
+        <li><i>у задачах обробки природної мови, таких як аналіз тексту;</i></li>
+        <li><i>у пошукових алгоритмах для пошуку ключових слів або тегів у тексті.</i></li>
+    </ul>
+    
+</p>
+
+<!-- Here you can explain some constraints for input-->
+<!-- The section is optional -->
+<p>
+    <strong>Передумови:</strong>
+    <ul>
+    <li><i>речення ∈ рядок;</i></li>
+    <li><i>length(sentence) &gt;= 0.</i></li>
+    </ul>
+</p>
