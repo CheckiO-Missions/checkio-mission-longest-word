@@ -1,0 +1,116 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        Nie mam pojęcia, jak zacząć rozwiązywać tę misję.
+    </div>
+    <div class="answer">
+        <p>
+            Proszę złapać pomysł 💡! Proszę zadeklarować zmienne do przechowywania najdłuższego słowa i jego długości. Podzielić zdanie na osobne słowa, przyjrzeć się każdemu z nich, znaleźć jego długość i porównać z zapamiętaną. Jeśli długość bieżącego słowa jest większa - proszę zaktualizować wartości zmiennych dla bieżącego najdłuższego słowa i jego długości.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok, od czego powinienem zacząć?
+    </div>
+    <div class="answer">
+        <p>
+            Proszę zadeklarować dwie zmienne: dla najdłuższego słowa z wartością początkową pustego ciągu; dla jego długości z wartością początkową 0. Na końcu ma zostać zwrócone najdłuższe słowo.
+        </p>
+        <pre class="brush: python">
+res = ""
+l = 0
+...
+return res
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Co robić dalej?
+    </div>
+    <div class="answer">
+        <p>
+            Podzielmy zdanie na osobne słowa za pomocą metody <a target="_blank" href="https://www.w3schools.com/python/ref_string_split.asp">str.split()</a> bez argumentów i iterujmy po tych słowach za pomocą pętli <a target="_blank" href="https://www.w3schools.com/python/python_for_loops.asp">for</a>.
+        </p>
+        <pre class="brush: python">
+for word in sentence.split():
+    ...
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Co zrobić z każdym słowem?
+    </div>
+    <div class="answer">
+        <p>
+            Ponieważ szukają Państwo najdłuższego słowa, należy obliczyć jego długość za pomocą funkcji <a target="_blank" href="https://www.w3schools.com/python/ref_func_len.asp">len()</a>.
+        </p>
+        <pre class="brush: python">
+l1 = len(word)
+        </pre>
+        <p>
+            Teraz, jeśli obliczona wartość <b class="code">l1</b> jest ściśle większa niż zapisana wartość <b class="code">l</b>, należy zaktualizować zmienne <b class="code">res</b> i <b class="code">l</b> o nowe wartości <b class="code">word</b> i <b class="code">l1</b>. 
+        </p>
+        <pre class="brush: python">
+if l1> l: res, l = word, l1
+        </pre>
+        <p>
+            Używane jest tutaj rozpakowywanie krotek. Ścisłe porównanie jest konieczne, aby zachować pierwsze słowo o najdłuższej długości.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Jak więc powinno wyglądać moje ostateczne rozwiązanie?
+    </div>
+    <div class="answer">
+        <p>
+            Wystarczy połączyć wszystkie poprzednie podpowiedzi i zawinąć kod w wyrażenie funkcyjne. Używanie podpowiedzi typu dla danych wejściowych i wyjściowych jest wysoce zalecane.
+        </p>
+        <p>Poniżej znajduje się całe rozwiązanie:</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def longest_word(sentence: str) -> str:
+    
+    res = ""
+    l = 0 
+    for word in sentence.split():
+        l1 = len(word)
+        if l1> l: res, l = word, l1
+        
+    return res
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Proszę pokazać mi więcej rozwiązań!<br />
+        bo chcę być prawdziwą 🥇 Python Ninnjaa!
+    </div>
+    <div class="answer">
+        <p>Jasne, proszę łapać!</p>
+        <p>
+            Proszę podzielić linię i wziąć maksimum według długości i odwróconego indeksu w linii.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def longest_word(line: str) -> str:
+
+    return line and max(line.split(), key=lambda w: (len(w), -line.index(w)))
+        </pre>
+        </div>
+        <p>Proszę kliknąć <b>Best Solutions</b> w menu misji i zobaczyć wiele innych ciekawych rozwiązań!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Dzięki! Teraz wiem i rozumiem więcej! Wszystko działa jak należy!
+    </div>
+    <div class="answer">
+        Miło mi to słyszeć 👍!
+    </div>
+</div>
+</body>
