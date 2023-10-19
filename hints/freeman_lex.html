@@ -5,7 +5,7 @@
     </div>
     <div class="answer">
         <p>
-            Catch an idea 💡! Declare variables to keep aa current longest word and its length. Split the sentence into separate words, look at every one, find its length and compare with the stored one. If the length of current word is longer - update values of variables for a current longest word and its length.
+            Catch an idea 💡! Declare variables to keep a current longest word and its length. Split the sentence into separate words, look at every one, find its length and compare with the stored one. If the length of current word is longer - update values of variables for a current longest word and its length.
         </p>
     </div>
 </div>
@@ -74,7 +74,8 @@ if l1 > l: res, l = word, l1
         <pre class="brush: python">
 def longest_word(sentence: str) -> str:
     
-    res, l = "", 0 
+    res = ""
+    l = 0 
     for word in sentence.split():
         l1 = len(word)
         if l1 > l: res, l = word, l1
