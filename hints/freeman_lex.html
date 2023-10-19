@@ -5,7 +5,7 @@
     </div>
     <div class="answer">
         <p>
-            Catch an idea 💡! Split the sentence into separate words, iterate over them and store the longest one on each step into predefined variable, return variable value at the end.
+            Catch an idea 💡! Declare variables to keep aa current longest word and its length. Split the sentence into separate words, look at every one, find its length and compare with the stored one. If the length of current word is longer - update values of variables for a current longest word and its length.
         </p>
     </div>
 </div>
@@ -18,7 +18,8 @@
             Declare two variables: for longest word with initial value of empty string; for its length with initial value 0. You are going to return the longest word at the end.
         </p>
         <pre class="brush: python">
-res, l = "", 0
+res = ""
+l = 0
 ...
 return res
         </pre>
