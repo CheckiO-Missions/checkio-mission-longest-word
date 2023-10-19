@@ -1,0 +1,116 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        Je n'ai aucune idée de la manière de commencer à résoudre cette mission.
+    </div>
+    <div class="answer">
+        <p>
+            Trouvez une idée 💡! Déclarez des variables pour conserver un mot actuel le plus long et sa longueur. Divisez la phrase en plusieurs mots, regardez chacun d'eux, trouvez sa longueur et comparez-la avec celle qui est stockée. Si le mot actuel est plus long, mettez à jour les valeurs des variables pour le mot le plus long et sa longueur.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok, par quoi dois-je commencer?
+    </div>
+    <div class="answer">
+        <p>
+            Déclarez deux variables: pour le mot le plus long avec une valeur initiale de chaîne vide; pour sa longueur avec une valeur initiale de 0. Vous allez renvoyer le mot le plus long à la fin.
+        </p>
+        <pre class="brush: python">
+res = ""
+l = 0
+...
+return res
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Que faire ensuite?
+    </div>
+    <div class="answer">
+        <p>
+            Découpons la phrase en mots distincts avec la méthode <a target="_blank" href="https://www.w3schools.com/python/ref_string_split.asp">str.split()</a> sans arguments et itérons sur ces mots avec la boucle <a target="_blank" href="https://www.w3schools.com/python/python_for_loops.asp">for</a>.
+        </p>
+        <pre class="brush: python">
+for word in sentence.split():
+    ...
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Que faire de chaque mot?
+    </div>
+    <div class="answer">
+        <p>
+            Comme vous cherchez le plus long, vous devez calculer sa longueur à l'aide de la fonction <a target="_blank" href="https://www.w3schools.com/python/ref_func_len.asp">len()</a>.
+        </p>
+        <pre class="brush: python">
+l1 = len(word)
+        </pre>
+        <p>
+            Maintenant, si la valeur calculée <b class="code">l1</b> est strictement supérieure à la valeur stockée <b class="code">l</b>, vous devez mettre à jour les variables <b class="code">res</b> et <b class="code">l</b> avec les nouvelles valeurs <b class="code">word</b> et <b class="code">l1</b>. 
+        </p>
+        <pre class="brush: python">
+if l1> l: res, l = word, l1
+        </pre>
+        <p>
+            Le déballage de tuple est utilisé ici. Une comparaison stricte est nécessaire pour conserver le premier mot le plus long.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Alors, à quoi devrait ressembler ma solution finale?
+    </div>
+    <div class="answer">
+        <p>
+            Il vous suffit de combiner tous les indices précédents et d'envelopper votre code dans une expression de fonction. Il est fortement recommandé d'utiliser des indications de type pour les données d'entrée et de sortie.
+        </p>
+        <p>Voici la solution complète:</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def longest_word(sentence: str) -> str:
+    
+    res = ""
+    l = 0 
+    for word in sentence.split():
+        l1 = len(word)
+        if l1> l: res, l = word, l1
+        
+    return res
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Montrez-moi d'autres solutions!<br />
+        parce que je veux être une vraie 🥇 Python Ninnjaa!
+    </div>
+    <div class="answer">
+        <p>Bien sûr, prenez-le!</p>
+        <p>
+            Diviser la ligne et prendre le maximum par la longueur et l'indice inversé dans la ligne.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def longest_word(line: str) -> str:
+
+    return line and max(line.split(), key=lambda w: (len(w), -line.index(w)))
+        </pre>
+        </div>
+        <p>Cliquez sur <b>Best Solutions</b> dans le menu mission et découvrez de nombreuses autres solutions intéressantes!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Merci beaucoup! Je comprends mieux maintenant! Tout fonctionne bien!
+    </div>
+    <div class="answer">
+        Heureux de l'apprendre 👍!
+    </div>
+</div>
+</body>
