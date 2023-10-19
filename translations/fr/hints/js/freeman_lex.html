@@ -1,0 +1,117 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        Je n'ai aucune idée de la manière de commencer à résoudre cette mission.
+    </div>
+    <div class="answer">
+        <p>
+            Attrapez une idée 💡! Divisez la phrase en mots distincts, itérez-les et stockez le plus long à chaque étape dans une variable prédéfinie, renvoyez la valeur de la variable à la fin.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok, par quoi dois-je commencer?
+    </div>
+    <div class="answer">
+        <p>
+            Déclarez deux variables: pour le mot le plus long avec une valeur initiale de chaîne vide; pour sa longueur avec une valeur initiale de 0. Vous allez renvoyer le mot le plus long à la fin.
+        </p>
+        <pre class="brush: javascript">
+let res = "", l = 0;
+...
+return res;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Que faire ensuite?
+    </div>
+    <div class="answer">
+        <p>
+            Découpons la phrase en mots distincts avec la méthode <a target="_blank" href="https://www.w3schools.com/jsref/jsref_split.asp">string.split()</a> sans arguments et itérons sur ces mots avec la boucle <a target="_blank" href="https://www.w3schools.com/js/js_loop_for.asp">for</a>.
+        </p>
+        <pre class="brush: javascript">
+for (let word of sentence.split(" ")) {
+    ...
+    }
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Que faire de chaque mot?
+    </div>
+    <div class="answer">
+        <p>
+            Puisque vous cherchez le plus long, vous devez calculer sa longueur à l'aide de la propriété <a target="_blank" href="https://www.w3schools.com/jsref/jsref_length_string.asp">string.length</a>.
+        </p>
+        <pre class="brush: javascript">
+let l1 = word.length;
+        </pre>
+        <p>
+            Si la valeur calculée <b class="code">l1</b> est strictement supérieure à la valeur stockée <b class="code">l</b>, vous devez mettre à jour les variables <b class="code">res</b> et <b class="code">l</b> avec les nouvelles valeurs <b class="code">word</b> et <b class="code">l1</b>. 
+        </p>
+        <pre class="brush: javascript">
+if (l1> l) [res, l] = [word, l1];
+        </pre>
+        <p>
+            Le déballage de tuple est utilisé ici. Une comparaison stricte est nécessaire pour conserver le premier mot le plus long.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Alors, à quoi devrait ressembler ma solution finale?
+    </div>
+    <div class="answer">
+        <p>
+            Il vous suffit de combiner tous les indices précédents et d'envelopper votre code dans une expression de fonction. Il est fortement recommandé d'utiliser des indications de type pour les données d'entrée et de sortie.
+        </p>
+        <p>Voici la solution complète:</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function longestWord(sentence: string): string {
+
+    let res = "", l = 0;
+    for (let word of sentence.split(" ")) {
+        let l1 = word.length;
+        if (l1> l) [res, l] = [word, l1];
+        }
+    return res;
+}
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Montrez-moi d'autres solutions!<br />
+        parce que je veux être un vrai 🥇 Javascript Hero!
+    </div>
+    <div class="answer">
+        <p>Bien sûr, prenez-le!</p>
+        <p>
+            Divisez la ligne et réduisez-la à une seule valeur à l'aide d'une fonction spécifique.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function longestWord(line: string): string {
+
+    return line.split(' ').reduce((pre, cur) => cur.length> pre.length? cur: pre, '');
+}
+        </pre>
+        </div>
+        <p>Cliquez sur <b>Best Solutions</b> dans le menu mission et découvrez de nombreuses autres solutions intéressantes!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Merci beaucoup! Je comprends mieux maintenant! Tout fonctionne bien!
+    </div>
+    <div class="answer">
+        Heureux de l'apprendre 👍!
+    </div>
+</div>
+</body>
