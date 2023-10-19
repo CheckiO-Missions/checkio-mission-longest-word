@@ -1,0 +1,116 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        我不知道如何开始解决这个任务。
+    </div>
+    <div class="answer">
+        <p>
+            给你个主意💡！声明变量，保存当前最长的单词及其长度。将句子分割成不同的单词，查看每个单词，找出其长度并与存储的长度进行比较。如果当前单词的长度更长，则更新当前最长单词及其长度的变量值。
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        好吧，我应该从哪里开始呢？
+    </div>
+    <div class="answer">
+        <p>
+            声明两个变量：最长单词变量，初始值为空字符串；长度变量，初始值为 0。最后返回最长的单词。
+        </p>
+        <pre class="brush: python">
+res = ""
+l = 0
+...
+return res
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        接下来要做什么？
+    </div>
+    <div class="answer">
+        <p>
+            让我们用<a target="_blank" href="https://www.w3schools.com/python/ref_string_split.asp">str.split()</a> 方法（不带参数）将句子分割成单词，然后用<a target="_blank" href="https://www.w3schools.com/python/python_for_loops.asp">for</a> 循环遍历这些单词。
+        </p>
+        <pre class="brush: python">
+for word in sentence.split():
+    ...
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        如何处理每个单词？
+    </div>
+    <div class="answer">
+        <p>
+            由于您要查找最长的单词，因此需要使用<a target="_blank" href="https://www.w3schools.com/python/ref_func_len.asp">len()</a> 函数计算长度。
+        </p>
+        <pre class="brush: python">
+l1 = len(word)
+        </pre>
+        <p>
+            现在，如果计算值<b class="code">l1</b> 严格大于存储值<b class="code">l</b> ，则需要用<b class="code">word</b> 和<b class="code">l1</b> 的新值更新变量<b class="code">res</b> 和<b class="code">l</b> 。 
+        </p>
+        <pre class="brush: python">
+if l1> l: res, l = word, l1
+        </pre>
+        <p>
+            这里使用的是元组解包。需要进行严格比较，以保留长度最长的第一个字。
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        那么，我的最终解决方案应该是怎样的呢？
+    </div>
+    <div class="answer">
+        <p>
+            您只需将之前所有的提示连接起来，然后将代码封装成函数表达式即可。强烈建议对输入和输出数据使用类型提示。
+        </p>
+        <p>以下是整个解决方案：</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def longest_word(sentence: str) -> str:
+    
+    res = ""
+    l = 0 
+    for word in sentence.split():
+        l1 = len(word)
+        if l1> l: res, l = word, l1
+        
+    return res
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        向我展示更多解决方案！<br />
+        因为我想成为一个真正的 🥇 Python Ninnjaa！
+    </div>
+    <div class="answer">
+        <p>当然，抓紧时间！</p>
+        <p>
+            分行，按长度和行中的反向索引取最大值。
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def longest_word(line: str) -> str:
+
+    return line and max(line.split(), key=lambda w: (len(w), -line.index(w)))
+        </pre>
+        </div>
+        <p>点击任务菜单<b>Best Solutions</b> ，查看更多有趣的解决方案！</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        谢谢！我现在知道并理解得更多了！一切正常！
+    </div>
+    <div class="answer">
+        很高兴听到这个消息 👍！
+    </div>
+</div>
+</body>
