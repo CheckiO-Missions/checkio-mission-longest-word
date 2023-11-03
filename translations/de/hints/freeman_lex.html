@@ -1,0 +1,116 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        Ich habe keine Ahnung, wie ich mit der Lösung dieser Aufgabe beginnen soll.
+    </div>
+    <div class="answer">
+        <p>
+            Haben Sie eine Idee 💡! Deklarieren Sie Variablen, um ein aktuelles längstes Wort und seine Länge zu speichern. Teilen Sie den Satz in einzelne Wörter auf, schauen Sie sich jedes einzelne an, ermitteln Sie seine Länge und vergleichen Sie sie mit der gespeicherten Länge. Wenn die Länge des aktuellen Wortes länger ist - aktualisieren Sie die Werte der Variablen für das aktuell längste Wort und seine Länge.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok, womit soll ich anfangen?
+    </div>
+    <div class="answer">
+        <p>
+            Deklarieren Sie zwei Variablen: für das längste Wort mit dem Anfangswert eines leeren Strings; für seine Länge mit dem Anfangswert 0. Sie werden am Ende das längste Wort zurückgeben.
+        </p>
+        <pre class="brush: python">
+res = ""
+l = 0
+...
+return res
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Was ist als nächstes zu tun?
+    </div>
+    <div class="answer">
+        <p>
+            Zerlegen wir den Satz in einzelne Wörter mit der Methode <a target="_blank" href="https://www.w3schools.com/python/ref_string_split.asp">str.split()</a> ohne Argumente und iterieren wir über diese Wörter mit der Schleife <a target="_blank" href="https://www.w3schools.com/python/python_for_loops.asp">for</a>.
+        </p>
+        <pre class="brush: python">
+for word in sentence.split():
+    ...
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Was tun wir mit jedem Wort?
+    </div>
+    <div class="answer">
+        <p>
+            Da Sie nach dem längsten Wort suchen, müssen Sie die Länge mit der Funktion <a target="_blank" href="https://www.w3schools.com/python/ref_func_len.asp">len()</a> berechnen.
+        </p>
+        <pre class="brush: python">
+l1 = len(word)
+        </pre>
+        <p>
+            Wenn nun der berechnete Wert <b class="code">l1</b> deutlich größer ist als der gespeicherte Wert <b class="code">l</b>, müssen Sie die Variablen <b class="code">res</b> und <b class="code">l</b> mit den neuen Werten <b class="code">word</b> und <b class="code">l1</b> aktualisieren. 
+        </p>
+        <pre class="brush: python">
+if l1> l: res, l = word, l1
+        </pre>
+        <p>
+            Hier wird das Tupel-Entpacken verwendet. Ein strenger Vergleich ist erforderlich, um das erste Wort mit der größten Länge zu erhalten.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Wie sollte also meine endgültige Lösung aussehen?
+    </div>
+    <div class="answer">
+        <p>
+            Sie müssen nur alle vorherigen Hinweise zusammenführen und Ihren Code in einen Funktionsausdruck verpacken. Die Verwendung von Typ-Hinweisen für Eingabe- und Ausgabedaten wird dringend empfohlen.
+        </p>
+        <p>Hier ist die gesamte Lösung:</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def longest_word(sentence: str) -> str:
+    
+    res = ""
+    l = 0 
+    for word in sentence.split():
+        l1 = len(word)
+        if l1> l: res, l = word, l1
+        
+    return res
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Zeigen Sie mir mehr Lösungen!<br />
+        denn ich möchte ein echter 🥇 Python Ninnjaa sein!
+    </div>
+    <div class="answer">
+        <p>Klar, schnapp sie dir!</p>
+        <p>
+            Teilen Sie die Zeile und nehmen Sie das Maximum nach Länge und umgekehrtem Index in der Zeile.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def longest_word(line: str) -> str:
+
+    return line and max(line.split(), key=lambda w: (len(w), -line.index(w)))
+        </pre>
+        </div>
+        <p>Klicken Sie im Missionsmenü auf <b>Best Solutions</b> und sehen Sie sich viele andere interessante Lösungen an!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Vielen Dank! Ich weiß und verstehe jetzt mehr! Alles funktioniert bestens!
+    </div>
+    <div class="answer">
+        Freut mich zu hören 👍!
+    </div>
+</div>
+</body>
