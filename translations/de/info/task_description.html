@@ -1,0 +1,46 @@
+<!-- Describe task in general -->
+
+<p>
+    Diese Funktion sollte eine Zeichenkette ohne Interpunktionszeichen als Eingabe nehmen und das längste Wort in der Zeichenkette zurückgeben. Gibt es mehrere gleich lange Wörter, wird das erste zurückgegeben, das erscheint.  
+</p>
+
+<p style="text-align: center;">
+    <img  title="example" src="{{MEDIA}}longest-word.png" alt="example" style="max-height: 200px"/>
+</p>
+
+<!-- Explain input and output values -->
+<p>
+   <strong>Eingabe:</strong> Zeichenkette <span>(str{% if is_js %}ing{% endif %})</span>.
+</p>
+
+<p>
+   <strong>Ausgabe:</strong> String <span>(str{% if is_js %}ing{% endif %})</span>. 
+</p>
+
+
+<p>
+    <strong>Beispiele:</strong>
+</p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+
+<!-- Here you can explain how it can be used in development -->
+<!-- The section is optional -->
+<p class="for_info_only">
+    <strong>Wie es verwendet wird:</strong>
+    <ul>
+        <li><i>bei der Verarbeitung natürlicher Sprache, wie der Textanalyse;</i></li>
+        <li><i>in Suchalgorithmen, um Schlüsselwörter oder Tags in einem Text zu finden.</i></li>
+    </ul>
+    
+</p>
+
+<!-- Here you can explain some constraints for input-->
+<!-- The section is optional -->
+<p>
+    <strong>Vorbedingungen:</strong>
+    <ul>
+    <li><i>satz ∈ String;</i></li>
+    <li><i>length(satz) &gt;= 0.</i></li>
+    </ul>
+</p>
