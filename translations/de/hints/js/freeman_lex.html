@@ -1,0 +1,117 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        Ich habe keine Ahnung, wie ich mit der Lösung dieser Aufgabe beginnen soll.
+    </div>
+    <div class="answer">
+        <p>
+            Fangen Sie eine Idee 💡! Teilen Sie den Satz in einzelne Wörter auf, iterieren Sie über sie und speichern Sie das längste bei jedem Schritt in einer vordefinierten Variablen, geben Sie den Variablenwert am Ende zurück.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok, womit soll ich anfangen?
+    </div>
+    <div class="answer">
+        <p>
+            Deklarieren Sie zwei Variablen: für das längste Wort mit dem Anfangswert eines leeren Strings; für seine Länge mit dem Anfangswert 0. Sie werden am Ende das längste Wort zurückgeben.
+        </p>
+        <pre class="brush: javascript">
+let res = "", l = 0;
+...
+return res;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Was ist als nächstes zu tun?
+    </div>
+    <div class="answer">
+        <p>
+            Zerlegen wir den Satz in einzelne Wörter mit der Methode <a target="_blank" href="https://www.w3schools.com/jsref/jsref_split.asp">string.split()</a> ohne Argumente und iterieren wir über diese Wörter mit der Schleife <a target="_blank" href="https://www.w3schools.com/js/js_loop_for.asp">for</a>.
+        </p>
+        <pre class="brush: javascript">
+for (let word of sentence.split(" ")) {
+    ...
+    }
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Was tun wir mit jedem Wort?
+    </div>
+    <div class="answer">
+        <p>
+            Da Sie nach dem längsten Wort suchen, müssen Sie die Länge mit der Eigenschaft <a target="_blank" href="https://www.w3schools.com/jsref/jsref_length_string.asp">string.length</a> berechnen.
+        </p>
+        <pre class="brush: javascript">
+let l1 = word.length;
+        </pre>
+        <p>
+            Wenn nun dieser berechnete Wert <b class="code">l1</b> deutlich größer ist als der gespeicherte Wert <b class="code">l</b>, müssen Sie die Variablen <b class="code">res</b> und <b class="code">l</b> mit den neuen Werten <b class="code">word</b> und <b class="code">l1</b> aktualisieren. 
+        </p>
+        <pre class="brush: javascript">
+if (l1> l) [res, l] = [word, l1];
+        </pre>
+        <p>
+            Hier wird das Tupel-Entpacken verwendet. Ein strenger Vergleich ist erforderlich, um das erste Wort mit der größten Länge zu erhalten.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Wie sollte also meine endgültige Lösung aussehen?
+    </div>
+    <div class="answer">
+        <p>
+            Sie müssen nur alle vorherigen Hinweise zusammenführen und Ihren Code in einen Funktionsausdruck verpacken. Die Verwendung von Typ-Hinweisen für Eingabe- und Ausgabedaten wird dringend empfohlen.
+        </p>
+        <p>Hier ist die gesamte Lösung:</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function longestWord(sentence: string): string {
+
+    let res = "", l = 0;
+    for (let word of sentence.split(" ")) {
+        let l1 = word.length;
+        if (l1> l) [res, l] = [word, l1];
+        }
+    return res;
+}
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Zeigen Sie mir mehr Lösungen!<br />
+        denn ich möchte ein echter 🥇 Javascript-Held sein!
+    </div>
+    <div class="answer">
+        <p>Klar, schnappen Sie es sich!</p>
+        <p>
+            Teilen Sie die Zeile und reduzieren Sie sie mit einer speziellen Funktion auf einen einzigen Wert.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function longestWord(line: string): string {
+
+    return line.split(' ').reduce((pre, cur) => cur.length> pre.length? cur: pre, '');
+}
+        </pre>
+        </div>
+        <p>Klicken Sie im Missionsmenü auf <b>Best Solutions</b> und sehen Sie sich eine Reihe weiterer interessanter Lösungen an!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Danke! Ich weiß und verstehe jetzt mehr! Alles funktioniert bestens!
+    </div>
+    <div class="answer">
+        Freut mich zu hören 👍!
+    </div>
+</div>
+</body>
